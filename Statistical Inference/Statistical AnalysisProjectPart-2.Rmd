@@ -1,0 +1,66 @@
+---
+title: " Analyzing the ToothGrowth data in the R datasets package"
+output: 
+  pdf_document : default
+  html_document:
+    keep_md: TRUE
+---
+
+```{r setup}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE,echo = TRUE)
+```
+
+### 1. Load the ToothGrowth data and perform some basic exploratory data analyses.
+#### Loading Libraries and dataset
+```{r,echo=TRUE}
+library(ggplot2)
+library(datasets)
+data("ToothGrowth")
+```
+### 2. Provide a basic summary of the data.
+```{r, echo=TRUE}
+dim(ToothGrowth)
+summary(ToothGrowth)
+unique(ToothGrowth$dose)
+```
+#### Making Boxplot of the Toothdata.
+```{r echo=TRUE, fig.height=3, fig.width=3}
+qplot(x = supp, y = len, data = ToothGrowth, facets = ~ dose, 
+      main = "Tooth Growth by Supplement Type and Dosage", xlab="Supplement",
+      ylab = "Length of Tooth") + geom_boxplot(aes(fill = supp))
+```
+**According to the plot there is a statistically significant difference between teeth length and dose levels across both delivery methods, as the dose increases so does length.**
+#### Subsetting data according to Doses.
+```{r,echo=TRUE}
+Dose0.5 <- subset.data.frame(x = ToothGrowth, dose == 0.5) 
+Dose1.0 <- subset.data.frame(x = ToothGrowth, dose == 1.0) 
+Dose2.0 <- subset.data.frame(x = ToothGrowth, dose == 2.0)
+```
+### 3. Use confidence intervals and/or hypothesis tests to compare tooth growth by supp and dose.
+#### T.test on the data with 0.5 Dose
+```{r, echo=TRUE}
+T.TestDose0.5 <- t.test(len ~ supp, data = Dose0.5)
+T.TestDose0.5
+```
+**p-value** when dosage is 0.5 is **0.006359** < 0.05.
+#### T.test on the data with 1.0 Dose
+```{r,echo=TRUE}
+T.TestDose1.0 <- t.test(len ~ supp, data = Dose1.0)
+T.TestDose1.0
+```
+**p-value** when dosage is 1.0 is **0.001038** < 0.05.
+#### T.test on the data with 2.0 Dose
+```{r,echo=TRUE}
+T.TestDose2.0 <- t.test(len ~ supp, data = Dose2.0)
+T.TestDose2.0
+```
+**p-value** when dosage is 2.0 is **0.9639** > 0.05.
+#### T.test on the ToothGrowth Data when length depends on supplement. 
+```{r, echo=TRUE}
+T.TestToothGrowth <- t.test(len ~ supp, data = ToothGrowth)
+T.TestToothGrowth
+```
+**p-value** when length depends on supplement is **0.06063** > 0.05.
+### 4. State your conclusions and the assumptions needed for your conclusions.
+In the previous section of this report we drew some conclusions from our tests.
+**It appears that there is a significant relationship between teeth length and dose levels across both delivery methods, as the dose increases so does length. On the other hand, there doesn't seem to be a statistically significant difference between delivery methods, with OJ apparently more effective at dose levels 0.5 and 1, and VC slightly more effective at dose level 2**
