@@ -1,0 +1,51 @@
+Prediction of Displacement of the car from "mtcars" dataset.
+========================================================
+author: SK
+date: 31/07/19
+autosize: true
+
+Introduction
+========================================================
+
+This shiny application predicts the displacement done by cars according to variations in factors affecting the displacement.
+
+The User chooses the the number of carborators , the horsepower and the weight of th car.
+
+The app then shows the plots of the points and regression lines showing the relation between displacement and the factors affecting it.
+
+Also the application predicts the value according to change in the values of the variables and also plot the predicted value in the plots.
+
+More details can be found at :
+-Deployed Application : https://zippysphinx.shinyapps.io/displacement/
+
+Data
+========================================================
+
+This app uses the data from the datasets contained in datasets package.
+The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models).
+
+```{r}
+str(mtcars)
+```
+
+How application works !
+========================================================
+
+The user selects the following things :
+- Horsepower of the car
+- Number of carborators in car
+- Weight of the car.
+
+The application then uses 3 linear models to predict the value of the displacement from the data inputed by user.
+
+The plots and prediction values are automatically refreshed as the values changes.
+
+Documentation
+========================================================
+A documentation is created inside the shiny application in the documentation tab which contains following information :
+- Why and which of the variables from the data are choosen for the models.
+- The information of the linear models used to predict the displacement value.
+- Units of the values used in the models.
+- What information, plots represent and what they contain in them.
+- How plots are working and made.
+

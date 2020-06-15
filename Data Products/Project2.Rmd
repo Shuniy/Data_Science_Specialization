@@ -1,0 +1,51 @@
+---
+title: "Developing Data Projects"
+author: "Shubham Kumar"
+date: "7/30/2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+## Objective
+
+Create a web page presentation using R Markdown that features a plot created with Plotly. Host your webpage on either github pages or Rpubs.
+Your webpage must contain the date that you created the document and it must contain a plot created with Plotly.
+
+## Slide with R code.
+
+```{r, echo=TRUE}
+library(ggplot2)
+library(plotly)
+
+data("iris")
+
+str(iris)
+```
+
+## Plot with Relation between Species and its Sepal length.
+
+```{r , echo = TRUE}
+plot_ly(data = iris, y = ~Sepal.Length, color = ~Species, type = "scatter", mode = "lines")
+```
+
+## Plot with Relation between Species and its Petal length.
+
+```{r , echo=TRUE}
+plot_ly(data = iris, y = ~Petal.Length, color = ~Species, type = "scatter", mode = "lines")
+```
+
+## Plot with Relation between Species and its Sepal width.
+
+```{r , echo=TRUE}
+plot_ly(data = iris, y = ~Sepal.Width, color = ~Species, type = "scatter", mode = "lines")
+```
+
+
+## Plot with Relation between Species and its Petal width.
+
+```{r , echo=TRUE}
+plot_ly(data = iris, y = ~Petal.Width, color = ~Species, type = "scatter", mode = "lines")
+```

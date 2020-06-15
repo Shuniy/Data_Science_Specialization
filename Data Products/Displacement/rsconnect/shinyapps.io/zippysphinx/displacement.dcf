@@ -1,0 +1,12 @@
+name: displacement
+title:
+username:
+account: zippysphinx
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1060637
+bundleId: 2279611
+url: https://zippysphinx.shinyapps.io/displacement/
+when: 1564574866.7604
+asMultiple: FALSE
+asStatic: FALSE
