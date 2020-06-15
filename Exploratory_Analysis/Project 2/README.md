@@ -10,3 +10,33 @@ The following questions are addressed with this submission:
 4. Across the United States, how have emissions from coal combustion-related sources changed from 1999–2008?
 5. How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
 6. Compare emissions from motor vehicle sources in Baltimore City with emissions from motor vehicle sources in Los Angeles County, California. Which city has seen greater changes over time in motor vehicle emissions?
+
+### Plot 1
+
+
+![plot of chunk unnamed-chunk-2](plot1.png)
+
+
+### Plot 2
+
+![plot of chunk unnamed-chunk-3](plot2.png)
+
+
+### Plot 3
+
+![plot of chunk unnamed-chunk-4](plot3.png)
+
+
+### Plot 4
+
+![plot of chunk unnamed-chunk-5](plot4.png)
+
+### Plot 5
+
+
+![plot of chunk unnamed-chunk-2](plot5.png)
+
+
+### Plot 6
+
+![plot of chunk unnamed-chunk-3](plot6.png)
